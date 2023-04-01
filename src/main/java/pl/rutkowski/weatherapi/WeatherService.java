@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.rutkowski.weatherapi.model.WeatherResponseDto;
 
-import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
