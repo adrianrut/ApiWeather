@@ -18,9 +18,7 @@ public class WeatherService {
 
         String cityToFind = city.toLowerCase();
 
-
         String url = "https://api.openweathermap.org/data/2.5/weather?q="+cityToFind+"&appid=8495016b164251bae83628d23bc9e72f&units=metric";
-
 
         RestTemplate restTemplate = new RestTemplate();
         WeatherResponseDto response = restTemplate.getForObject(url, WeatherResponseDto.class);
