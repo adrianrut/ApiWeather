@@ -5,8 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import pl.rutkowski.weatherapi.weatherservice.WeatherDetails;
+import pl.rutkowski.weatherapi.weatherservice.WeatherService;
 
-import java.util.List;
 
 @Controller
 public class HomeController {
@@ -26,13 +27,12 @@ public class HomeController {
 
     @PostMapping("/city")
     public String getCity(City city) {
-        weatherService.getCityName(city);
         return "redirect:/weather=" + city.getName().toLowerCase();
     }
 
     @GetMapping("/weather={city}")
     public String showWeather(@PathVariable String city, Model model) {
-        List<WeatherDetails> weatherDetails = weatherService.getWeatherDetails(city);
+        WeatherDetails weatherDetails = weatherService.getWeatherDetails(city);
         model.addAttribute("weatherDetails", weatherDetails);
         model.addAttribute("city", city);
         return "weather";

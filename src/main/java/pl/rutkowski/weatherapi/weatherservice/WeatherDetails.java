@@ -1,4 +1,4 @@
-package pl.rutkowski.weatherapi;
+package pl.rutkowski.weatherapi.weatherservice;
 
 import lombok.Data;
 

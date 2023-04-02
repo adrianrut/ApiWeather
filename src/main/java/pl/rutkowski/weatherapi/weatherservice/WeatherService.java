@@ -1,24 +1,25 @@
-package pl.rutkowski.weatherapi;
+package pl.rutkowski.weatherapi.weatherservice;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import pl.rutkowski.weatherapi.model.WeatherResponseDto;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class WeatherService {
 
+    private final String openWeatherApiKey;
 
-    public void getCityName(City city) {
+    public WeatherService(@Value("${app.openWeatherApiKey}") String openWeatherApiKey) {
+        this.openWeatherApiKey = openWeatherApiKey;
     }
 
-    public List<WeatherDetails> getWeatherDetails(String city) {
+
+    public WeatherDetails getWeatherDetails(String city) {
 
         String cityToFind = city.toLowerCase();
 
-        String url = "https://api.openweathermap.org/data/2.5/weather?q="+cityToFind+"&appid=8495016b164251bae83628d23bc9e72f&units=metric";
+        String url = "https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s&units=metric"
+                .formatted(cityToFind, openWeatherApiKey);
 
         RestTemplate restTemplate = new RestTemplate();
         WeatherResponseDto response = restTemplate.getForObject(url, WeatherResponseDto.class);
@@ -29,9 +30,7 @@ public class WeatherService {
         weatherDetails.setTemp(response.getMain().getTemp());
         weatherDetails.setPressure(response.getMain().getPressure());
         weatherDetails.setWindSpeed(response.getWind().getSpeed());
-        List<WeatherDetails> list = new ArrayList<>();
-        list.add(weatherDetails);
-        return list;
+        return weatherDetails;
     }
 
 }

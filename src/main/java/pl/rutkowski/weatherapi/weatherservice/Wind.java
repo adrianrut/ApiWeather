@@ -1,10 +1,10 @@
 
-package pl.rutkowski.weatherapi.model;
+package pl.rutkowski.weatherapi.weatherservice;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Wind {
+class Wind {
 
     private Double speed;
     private Integer deg;

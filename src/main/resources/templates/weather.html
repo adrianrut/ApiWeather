@@ -27,11 +27,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="weather : ${weatherDetails}">
-        <td th:text="${weather.country}">Mark</td>
-        <td th:text="|${weather.temp}&#8451;|">Mark</td>
-        <td th:text="|${weather.windSpeed} km/h|"></span>Otto</td>
-        <td th:text="|${weather.pressure} hPa|">@mdo</td>
+    <tr>
+        <td th:text="${weatherDetails.country}">Mark</td>
+        <td th:text="|${weatherDetails.temp}&#8451;|">Mark</td>
+        <td th:text="|${weatherDetails.windSpeed} km/h|"></span>Otto</td>
+        <td th:text="|${weatherDetails.pressure} hPa|">@mdo</td>
     </tr>
 
     </tbody>

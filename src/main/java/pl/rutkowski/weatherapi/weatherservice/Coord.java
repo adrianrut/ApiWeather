@@ -1,23 +1,29 @@
 
-package pl.rutkowski.weatherapi.model;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
+package pl.rutkowski.weatherapi.weatherservice;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Clouds {
+class Coord {
 
-    private Integer all;
+    private Double lon;
+    private Double lat;
     private final Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
-    public Integer getAll() {
-        return all;
+    public Double getLon() {
+        return lon;
     }
 
-    public void setAll(Integer all) {
-        this.all = all;
+    public void setLon(Double lon) {
+        this.lon = lon;
+    }
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
     }
 
     public Map<String, Object> getAdditionalProperties() {

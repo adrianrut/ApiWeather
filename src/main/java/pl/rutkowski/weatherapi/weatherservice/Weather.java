@@ -1,10 +1,10 @@
 
-package pl.rutkowski.weatherapi.model;
+package pl.rutkowski.weatherapi.weatherservice;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Weather {
+class Weather {
 
     private Integer id;
     private String main;

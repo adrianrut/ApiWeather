@@ -1,11 +1,11 @@
-package pl.rutkowski.weatherapi.model;
+package pl.rutkowski.weatherapi.weatherservice;
 
 
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class WeatherResponseDto {
+class WeatherResponseDto {
 
     private Coord coord;
     private List<Weather> weather;

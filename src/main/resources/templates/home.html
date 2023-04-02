@@ -16,7 +16,7 @@
 </head>
 <body class="block-list">
 <h2>Podaj miasto</h2>
-<form method="post" action="/city" th:object="${city}">
+<form method="post" th:action="@{/city}" th:object="${city}">
     <label>
         <input type="text" th:field="*{name}" required>
     </label>

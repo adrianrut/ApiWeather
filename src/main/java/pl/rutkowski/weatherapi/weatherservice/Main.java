@@ -1,12 +1,10 @@
 
-package pl.rutkowski.weatherapi.model;
-
-import lombok.Data;
+package pl.rutkowski.weatherapi.weatherservice;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Main {
+class Main {
 
     private Double temp;
     private Double feelsLike;
