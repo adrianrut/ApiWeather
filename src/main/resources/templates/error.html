@@ -15,7 +15,9 @@
     </style>
 </head>
 <body class="block-list">
-<h2>Nie udało się znaleźć podanego miasta</h2><br><br>
+<h2>Wystąpił problem</h2>
+<p th:text="${errorMessage}">Nie udało się pobrać danych pogodowych.</p>
+<br>
 <a href="/">Powrót do strony głównej</a>
 
 </body>
